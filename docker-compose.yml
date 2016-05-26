@@ -1,0 +1,12 @@
+logserver:
+  image: mongo:3.2.1
+
+skoleskyss:
+  image: telemark/log.skoleskyss.t-fk.no
+  container_name: log_skoleskyss
+  env_file: log.skoleskyss.env
+  restart: always
+  links:
+    - logserver
+  ports:
+    - 8000:8000

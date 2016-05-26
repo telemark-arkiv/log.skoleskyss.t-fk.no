@@ -1,0 +1,74 @@
+{
+  "name": "log.skoleskyss.t-fk.no",
+  "version": "1.0.0",
+  "description": "Logserver for skoleskyss",
+  "license": "MIT",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "contributors": [
+    {
+      "name": "Jonas Enge",
+      "email": "jonas.enge@gmail.com",
+      "url": "https://github.com/maccyber"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.4.5"
+  },
+  "scripts": {
+    "start": "node standalone.js",
+    "test": "standard && tap --reporter=spec test/**/*.js",
+    "coverage": "tap test/**/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
+    "setup": "npm install && node setup.js",
+    "generate-test-token": "node utils/generate-test-token.js"
+  },
+  "keywords": [
+    "Louie",
+    "Telemark fylkeskommune",
+    "Tfk",
+    "Digitalisering",
+    "Skoleskyss"
+  ],
+  "louie": {
+    "versionName": "Blondie",
+    "versionVideoUrl": "https://www.youtube.com/watch?v=WDP7_h4wkgw",
+    "systemName": "log-skoleskyss"
+  },
+  "standard": {
+    "ignore": [
+      "public"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/telemark/log.skoleskyss.t-fk.no.git"
+  },
+  "bugs": {
+    "url": "http://github.com/telemark/log.skoleskyss.t-fk.no/issues"
+  },
+  "devDependencies": {
+    "coveralls": "2.11.9",
+    "standard": "7.1.0",
+    "tap": "5.7.2"
+  },
+  "dependencies": {
+    "good": "7.0.1",
+    "good-console": "6.1.1",
+    "good-squeeze": "3.0.1",
+    "handlebars": "4.0.5",
+    "hapi": "13.4.1",
+    "hapi-auth-cookie": "6.1.1",
+    "hapi-auth-jwt2": "7.0.0",
+    "hoek": "4.0.0",
+    "inert": "4.0.0",
+    "jsonwebtoken": "7.0.0",
+    "mongojs": "2.4.0",
+    "vision": "4.1.0",
+    "yar": "7.0.2"
+  }
+}
