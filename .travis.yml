@@ -15,4 +15,4 @@ addons:
 
 after_success:
   - npm run coveralls
-  - curl --data build=true -X POST https://registry.hub.docker.com/u/telemark/log.skoleskyss.t-fk.no/trigger/d58dda3d-7739-4dfe-abed-a7f56dfec50f/
+  - curl --data build=true -X POST https://registry.hub.docker.com/u/telemark/log.skoleskyss.t-fk.no/trigger/0b643ba5-82f6-4247-893b-ba08ac632b53/
