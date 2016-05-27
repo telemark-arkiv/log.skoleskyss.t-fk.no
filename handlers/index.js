@@ -1,18 +1,27 @@
 'use strict'
 
+const mongojs = require('mongojs')
 const config = require('../config')
 const pkg = require('../package.json')
+const dblog = mongojs(config.LOG_SKOLESKYSS_DB_CONNECTION_LOG)
+const logs = dblog.collection('logs')
 
 module.exports.getFrontpage = function getFrontpage (request, reply) {
-  const viewOptions = {
-    version: pkg.version,
-    versionName: pkg.louie.versionName,
-    versionVideoUrl: pkg.louie.versionVideoUrl,
-    systemName: pkg.louie.systemName,
-    githubUrl: pkg.repository.url
-  }
-
-  reply.view('index', viewOptions)
+  logs.find({}).sort({timeStamp: -1}).limit(20, function (error, data) {
+    if (error) {
+      console.error(error)
+    }
+    const viewOptions = {
+      version: pkg.version,
+      versionName: pkg.louie.versionName,
+      versionVideoUrl: pkg.louie.versionVideoUrl,
+      systemName: pkg.louie.systemName,
+      githubUrl: pkg.repository.url,
+      credentials: request.auth.credentials,
+      logs: data || []
+    }
+    reply.view('index', viewOptions)
+  })
 }
 
 module.exports.showLogin = function showLogin (request, reply) {

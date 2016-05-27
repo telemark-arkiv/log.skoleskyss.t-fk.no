@@ -26,6 +26,14 @@ const routes = [
       handler: Handlers.getStatsHours,
       description: 'Statistics for logs per hour of the day'
     }
+  },
+  {
+    method: 'GET',
+    path: '/statistikk',
+    config: {
+      handler: Handlers.showStats,
+      description: 'Statistics page'
+    }
   }
 ]
 
