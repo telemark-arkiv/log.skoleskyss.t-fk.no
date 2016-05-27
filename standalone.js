@@ -1,3 +1,5 @@
-/**
- * Created by geir on 26/05/16.
- */
+'use strict'
+
+const Server = require('./server')
+
+Server.start()

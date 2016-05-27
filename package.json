@@ -67,6 +67,7 @@
     "hoek": "4.0.0",
     "inert": "4.0.0",
     "jsonwebtoken": "7.0.0",
+    "ldapauth-fork": "2.5.2",
     "mongojs": "2.4.0",
     "vision": "4.1.0",
     "yar": "7.0.2"
