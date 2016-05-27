@@ -3,4 +3,4 @@
 const tap = require('tap')
 const routes = require('../../routes/api')
 
-tap.equal(routes.length, 1, 'There are 1 api routes')
+tap.equal(routes.length, 2, 'There are 2 api routes')

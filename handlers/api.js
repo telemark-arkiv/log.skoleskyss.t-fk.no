@@ -13,3 +13,10 @@ module.exports.addStatusToLog = function addStatusToLog (request, reply) {
     reply(error || data)
   })
 }
+
+module.exports.addLog = function addLog (request, reply) {
+  const payload = request.payload
+  logs.save(payload, function (error, data) {
+    reply(error || data)
+  })
+}
