@@ -1,5 +1,5 @@
 logserver:
-  image: mongo:3.2.1
+  image: mongo:3.2.6
 
 skoleskyss:
   image: telemark/log.skoleskyss.t-fk.no
