@@ -70,6 +70,11 @@
     "ldapauth-fork": "2.5.2",
     "mongojs": "2.4.0",
     "vision": "4.1.0",
-    "yar": "7.0.2"
+    "yar": "7.0.2",
+    "handlebars.moment": "^1.0.4",
+    "joi": "^8.4.1",
+    "moment": "^2.13.0",
+    "wreck": "^7.2.0"
+
   }
 }

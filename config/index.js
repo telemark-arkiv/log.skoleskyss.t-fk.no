@@ -31,6 +31,8 @@ const config = {
   LOG_SKOLESKYSS_GITHUB_FEEDBACK_URL: process.env.LOG_SKOLESKYSS_GITHUB_FEEDBACK_URL || 'https://api.github.com/repos/:user/:repo/issues',
   LOG_SKOLESKYSS_GITHUB_USER: process.env.LOG_SKOLESKYSS_GITHUB_USER || 'yourgithubuser',
   LOG_SKOLESKYSS_GITHUB_TOKEN: process.env.LOG_SKOLESKYSS_GITHUB_TOKEN || 'yourgithubtoken',
+  LOG_SKOLESKYSS_JSONXLSX_WS: process.env.LOG_SKOLESKYSS_JSONXLSX_WS || 'https://json2xlsx.service.t-fk.no/',
+  LOG_SKOLESKYSS_GET_APPLICATIONS: process.env.LOG_SKOLESKYSS_GET_APPLICATIONS || 'https://api.skoleskyss.t-fk.no/applications/',
   LDAP: {
     url: process.env.LOG_SKOLESKYSS_LDAP_URL || 'ldap://ldap.forumsys.com:389',
     bindDn: process.env.LOG_SKOLESKYSS_LDAP_BIND_DN || 'cn=read-only-admin,dc=example,dc=com',

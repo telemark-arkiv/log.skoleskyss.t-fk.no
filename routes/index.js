@@ -1,6 +1,8 @@
 'use strict'
 
 const Handlers = require('../handlers')
+var handlers = require('../handlers')
+var Joi = require('joi')
 
 const routes = [
   {
@@ -34,6 +36,31 @@ const routes = [
     path: '/logout',
     config: {
       handler: Handlers.doLogout
+    }
+  },
+   {
+    method: 'GET',
+    path: '/listapplications',
+    config: {
+      auth: false,
+      validate: {
+        query:
+        {
+          from: Joi.string(),
+          to: Joi.string()
+        }
+      },
+      handler: handlers.getselectedtimeperiod,
+      description: 'Show the frontpage with tableinformation'
+    }
+  },
+  {
+    method: 'GET',
+    path: '/excel',
+    config: {
+      auth: false,
+      handler: handlers.exportTableToExcel,
+      description: 'Send table to XLSX-converter'
     }
   }
 ]
