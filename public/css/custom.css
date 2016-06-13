@@ -104,6 +104,7 @@ button[disabled=disabled], button:disabled {
 
 .mdl-data-table {
     font-size: 16px;
+    top: 15px;
 }
 
 .mdl-data-table__cell--non-numeric {
