@@ -38,7 +38,7 @@ const routes = [
       handler: Handlers.doLogout
     }
   },
-   {
+  {
     method: 'GET',
     path: '/listapplications',
     config: {
