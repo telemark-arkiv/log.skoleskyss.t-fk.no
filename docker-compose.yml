@@ -1,5 +1,6 @@
 logserver:
   image: mongo:3.2.6
+  restart: always
 
 skoleskyss:
   image: telemark/log.skoleskyss.t-fk.no
