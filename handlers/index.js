@@ -12,7 +12,7 @@ var Moment = require('moment')
 MomentHandler.registerHelpers(Handlebars)
 
 module.exports.getFrontpage = function getFrontpage (request, reply) {
-  logs.find({}).sort({timeStamp: -1}).limit(20, function (error, data) {
+  logs.find({}).sort({timeStamp: -1}).limit(40, function (error, data) {
     if (error) {
       console.error(error)
     }
