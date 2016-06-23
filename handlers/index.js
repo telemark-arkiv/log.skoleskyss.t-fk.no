@@ -29,6 +29,32 @@ module.exports.getFrontpage = function getFrontpage (request, reply) {
   })
 }
 
+module.exports.getLogspage = function getLogspage (request, reply) {
+  const query = {
+    documentId: request.query.documentId
+  }
+
+  logs.find(query).sort({timeStamp: -1}, function (error, data) {
+    if (error) {
+      console.error(error)
+    }
+    var viewOptions = {
+      version: pkg.version,
+      versionName: pkg.louie.versionName,
+      versionVideoUrl: pkg.louie.versionVideoUrl,
+      systemName: pkg.louie.systemName,
+      githubUrl: pkg.repository.url,
+      credentials: request.auth.credentials,
+      logs: data
+    }
+    if (request.query.documentId) {
+      reply.view('logs-detailed', viewOptions)
+    } else {
+      reply.view('logs', viewOptions)
+    }
+  })
+}
+
 module.exports.showLogin = function showLogin (request, reply) {
   var viewOptions = {
     version: pkg.version,

@@ -15,6 +15,14 @@ const routes = [
   },
   {
     method: 'GET',
+    path: '/logs',
+    config: {
+      handler: Handlers.getLogspage,
+      description: 'Show the logspage'
+    }
+  },
+  {
+    method: 'GET',
     path: '/login',
     config: {
       handler: Handlers.showLogin,
