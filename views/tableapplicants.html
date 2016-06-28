@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Skoleskyss søknader </title>
+        <title>log-skoleskyss v1.1.0 - Blondie</title>
         <link rel="stylesheet" href="/public/css/bootstrap.css">
         <!-- Script og css biblioteker for løsningen-->
         <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
         <link rel="stylesheet" href="/public/css/custom.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="/public/js/jquery-1.9.1.min.js"></script>
         <script src=/public/js/stupidtable.js></script>
         <!-- Slutt på script og css biblioteker for løsningen-->
         <!--Setter UTF-8 standard-->
@@ -28,9 +28,9 @@
             <h4>Velg tidsrom</h4>
             <div>
             <label for="from" style="position:relative; float: left;">Fra:</label>
-            <input type="date" id="from" name="from" value="{{moment date=d format='YYYY-MM-DD' subtract='days' amount='5'}}" style="float: left; top: 130px;" />
+            <input type="date" id="from" class="mdl-textfield__input" name="from" value="{{moment date=d format='YYYY-MM-DD' subtract='days' amount='5'}}" style="float: left; top: 130px;" />
             <label for="to" style="top: 130px; float:left;">Til:</label>
-            <input type="date" id="to" name="to" value="{{moment date=d format='YYYY-MM-DD'}}" style=" position:relative; float: left;"/>
+            <input type="date" id="to" class="mdl-textfield__input" name="to" value="{{moment date=d format='YYYY-MM-DD'}}" style=" position:relative; float: left;"/>
             <!--Velg tidsavgrenset periode knapp-->
             <input type="submit" value="Hent valgt periode" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="position:relative; left: 50px;">
             <!--Slutt på knapp-->
