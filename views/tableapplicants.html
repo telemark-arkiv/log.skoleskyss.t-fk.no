@@ -22,15 +22,15 @@
     <body>
 
     <!--Panel for valgt periode-->
-    <div id="velgPeriode" style="left: 5px; display: inline-block; position: absolute; top: 0;">
+    <div id="velgPeriode" style="left: 5px; display: inline-block; position: relative; top: 0;">
 
         <form method="get" action="/listapplications">
             <h4>Velg tidsrom</h4>
             <div>
-            <label for="from" style="position:relative; float: left;">Fra:</label>
-            <input type="date" id="from" class="mdl-textfield__input" name="from" value="{{moment date=d format='YYYY-MM-DD' subtract='days' amount='5'}}" style="float: left; top: 130px;" />
-            <label for="to" style="top: 130px; float:left;">Til:</label>
-            <input type="date" id="to" class="mdl-textfield__input" name="to" value="{{moment date=d format='YYYY-MM-DD'}}" style=" position:relative; float: left;"/>
+            <label for="from" style="bottom: 4px; float:left; position:relative;">Fra:</label>
+            <input type="date" id="from" class="mdl-textfield__input" name="from" value="{{moment date=d format='YYYY-MM-DD' subtract='days' amount='5'}}" style="float: left; top: 130px; width: 180px;" />
+            <label for="to" style=" bottom: 4px; float:left;">Til:</label>
+            <input type="date" id="to" class="mdl-textfield__input" name="to" value="{{moment date=d format='YYYY-MM-DD'}}" style="position:relative; float: left; width: 180px;"/>
             <!--Velg tidsavgrenset periode knapp-->
             <input type="submit" value="Hent valgt periode" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="position:relative; left: 50px;">
             <!--Slutt på knapp-->
@@ -50,7 +50,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!--Itererer gjennom alle vediene til students og skriver de ut i tabellen-->
+                <!--Itererer gjennom alle verdiene til students og skriver de ut i tabellen-->
                 {{#each this}}
                 <tr>
                     {{#each .}}
@@ -67,6 +67,7 @@
             $("skolekyssokere").stupidtable();
         });
     </script>
+    <p></p>
     <!--Eksporterer tabellen til Excel-knapp-->
     <div class="form-group" style="top: 26px; position: relative;">
         <a href="/excel" id="button"
