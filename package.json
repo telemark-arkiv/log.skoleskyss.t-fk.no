@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "author": {
@@ -13,11 +13,16 @@
       "name": "Jonas Enge",
       "email": "jonas.enge@gmail.com",
       "url": "https://github.com/maccyber"
+    },
+    {
+      "name": "Jørgen Johansen",
+      "email": "post@jorgenjohansen.no",
+      "url": "https://jorgenjohansen.no"
     }
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=4.4.5"
+    "node": ">=4.4.7"
   },
   "scripts": {
     "start": "node standalone.js",
