@@ -105,6 +105,12 @@ button[disabled=disabled], button:disabled {
 .mdl-data-table {
     font-size: 16px;
     top: 15px;
+    width: 100%;
+    left:3%;
+}
+.mdl-data-table2 {
+    font-size: 16px;
+    top: 15px;
 }
 
 .mdl-data-table__cell--non-numeric {
@@ -294,4 +300,7 @@ a:visited {
     vertical-align: middle;
     margin-right: 0.8rem;
     display: inline-block;
+}
+.mdl-cell--6-col, .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop{
+    width: 100%;
 }
