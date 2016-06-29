@@ -1,7 +1,7 @@
-/*.mdl-layout {
+.mdl-layout {
     align-items: center;
     justify-content: center;
-}*/
+}
 
 .mdl-card__actions {
     display: flex;
