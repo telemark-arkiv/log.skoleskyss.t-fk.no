@@ -6,10 +6,18 @@ const pkg = require('../package.json')
 const dblog = mongojs(config.LOG_SKOLESKYSS_DB_CONNECTION_LOG)
 const logs = dblog.collection('logs')
 var Wreck = require('wreck')
+const generateToken = require('../lib/generate-token')
 var Handlebars = require('handlebars')
 var MomentHandler = require('handlebars.moment')
 var Moment = require('moment')
 MomentHandler.registerHelpers(Handlebars)
+const token = generateToken({key: config.LOG_SKOLESKYSS_JWT_SECRET, payload: {system: 'log.skoleskyss.t-fk.no'}})
+var wreckOptions = {
+  json: true,
+  headers: {
+    Authorization: token
+  }
+}
 
 module.exports.getFrontpage = function getFrontpage (request, reply) {
   logs.find({}).sort({timeStamp: -1}).limit(40, function (error, data) {
@@ -135,9 +143,6 @@ module.exports.exportTableToExcel = function exportTableToExcel (request, reply)
 }
 
 module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, reply) {
-  var wreckOptions = {
-    json: true
-  }
   var from = request.query.from || Moment().subtract(5, 'day')
   var to = request.query.to || Moment.now()
   var fromDate = Moment(from).unix()
