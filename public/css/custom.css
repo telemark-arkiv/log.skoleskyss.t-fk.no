@@ -304,3 +304,41 @@ a:visited {
 .mdl-cell--6-col, .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop{
     width: 100%;
 }
+/*Overskrift for frontend løsningen*/
+#header {
+    width: 100%;
+    left: 200px;
+    position: relative;
+    bottom: 20px;
+}
+
+/*Tabell frontend*/
+#skolekyssokere {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.mdl-layout__content {
+    -ms-flex: 0 1 auto;
+    position: relative;
+    display: inline-block;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mdl-js-layout {
+    height: 100%;
+}
+
+.exportToExcelClick {
+    position: relative;
+    top: 91px;
+    bottom: 538px;
+    left: 0;
+}
