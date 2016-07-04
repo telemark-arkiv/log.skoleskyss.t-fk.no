@@ -16,7 +16,7 @@
     </head>
     <!--Header som inneholder logo og fargeprofil-->
     <div id="header">
-        <h2 style="width: 100%; left: 200px; position: relative; bottom: 20px;">Skoleskyss søkere</h2>
+        <h2>Skoleskyss søkere</h2>
     </div>
     <!--Slutt på header-->
     <body>
@@ -40,6 +40,7 @@
     </div>
     <br>
     <!--Slutt på valgt periode-->
+    <div id="table">
         <!--Tabell for som inneholder Skolekyss Søkere-->
         <table id="skolekyssokere" class="mdl-data-table mdl-js-data-table mdl-data-table- mdl-shadow--2dp">
             <thead>
@@ -69,13 +70,14 @@
     </script>
     <p></p>
     <!--Eksporterer tabellen til Excel-knapp-->
-    <div class="form-group" style="top: 26px; position: relative;">
+    <div class="exportToExcelClick">
         <a href="/excel" id="button"
            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Eksporter til Excel
         </a>
     </div>
     <!-- Slutt på Excel-knapp -->
+    </div>
     <br>
     <script>
         function correctDateFormat(standardDate) {
