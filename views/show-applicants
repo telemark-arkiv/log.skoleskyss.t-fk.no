@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <!-- <title>log-skoleskyss v1.1.0 - Blondie</title>-->
+            <!--<title>{{systemName}} v{{version}} - {{versionName}}</title>-->
+            <!--<link rel="stylesheet" href="/public/css/bootstrap.css">-->
+            <!-- Script og css biblioteker for løsningen-->
+            <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+            <link rel="stylesheet" href="/public/css/custom.css">
+            <!--<script src="/public/js/jquery-1.9.1.min.js"></script>-->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script src=/public/js/stupidtable.js></script>
+            <!-- Slutt på script og css biblioteker for løsningen-->
+            <!--Setter UTF-8 standard-->
+            <meta charset="UTF-8">
+        </head>
+        <!--Slutt på header-->
+        <!--Header som inneholder logo og fargeprofil-->
+        <div id="header">
+            <h2>Skoleskyss søkere</h2>
+        </div>
+
+        <body>
+        <!--Panel for valgt periode-->
+        <div id="velgPeriode" style="left: 5px; display: inline-block; position: relative; top: 0;">
+            <form method="get" action="/listapplications">
+                <h4>Velg tidsrom</h4>
+                <div>
+                    <label for="from" style="bottom: 4px; float:left; position:relative;">Fra:</label>
+                    <input type="date" id="from" class="mdl-textfield__input" name="from"
+                           value="{{moment date=d format='YYYY-MM-DD'}}"
+                           style="float: left; top: 130px; width: 180px;"/>
+                    <label for="to" style=" bottom: 4px; float:left;">Til:</label>
+                    <input type="date" id="to" class="mdl-textfield__input" name="to"
+                           value="{{moment date=d format='YYYY-MM-DD'}}" style="position:relative; float: left; width: 180px;"/>
+                    <!--Velg tidsavgrenset periode knapp-->
+                    <input type="submit" value="Hent valgt periode"
+                           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                           style="position:relative; left: 50px;"/>
+                    <!--Slutt på knapp-->
+                </div>
+            </form>
+            <br>
+        </div>
+        <br>
+        <!--Slutt på valgt periode-->
+        {{>table-contens}}
+        <!--Sorteringsfunksjonalitet for tabellen-->
+        <script>
+            $(function () {
+                $("skolekyssokere").stupidtable();
+            });
+        </script>
+        <p></p>
+        <!--Eksporterer tabellen til Excel-knapp-->
+        <div class="exportToExcelClick">
+            <a href="/excel" id="button"
+               class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Eksporter til Excel
+            </a>
+        </div>
+        <!-- Slutt på Excel-knapp -->
+        </div>
+        <br>
+        <script>
+            function correctDateFormat(standardDate) {
+                console.log(("Datoformatet er: " + standardDate))
+                console.log((new Date(standardDate).getTime() / 1000))
+            }
+        </script>
+        </body>
+    </html>
