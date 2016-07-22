@@ -154,6 +154,6 @@ module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, 
       reply(err)
     }
     request.yar.set({'sokerdata': payload})
-    reply.view('tableapplicants', payload)
+    reply.view('show-applicants', payload)
   })
 }
