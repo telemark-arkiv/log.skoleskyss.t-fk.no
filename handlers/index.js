@@ -148,12 +148,20 @@ module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, 
   var fromDate = Moment(from).unix()
   var toDate = Moment(to).unix()
 
-  var url = config.LOG_SKOLESKYSS_GET_APPLICATIONS + fromDate + '/' + toDate
+ var url = config.LOG_SKOLESKYSS_GET_APPLICATIONS + fromDate + '/' + toDate
   Wreck.get(url, wreckOptions, function (err, data, payload) {
     if (err) {
       reply(err)
     }
+    var viewOptions = {
+      version: pkg.version,
+      versionName: pkg.louie.versionName,
+      versionVideoUrl: pkg.louie.versionVideoUrl,
+      systemName: pkg.louie.systemName,
+      githubUrl: pkg.repository.url,
+      payload:payload
+    }
     request.yar.set({'sokerdata': payload})
-    reply.view('show-applicants', payload)
+    reply.view('show-applicants', viewOptions)
   })
 }
