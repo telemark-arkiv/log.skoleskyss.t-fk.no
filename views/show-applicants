@@ -2,7 +2,7 @@
     <html>
         <head>
             <!-- <title>log-skoleskyss v1.1.0 - Blondie</title>-->
-            <!--<title>{{systemName}} v{{version}} - {{versionName}}</title>-->
+            <!--<title>{{viewOptions.systemName}} v{{viewOptions.version}} - {{viewOptions.versionName}}</title>-->
             <!--<link rel="stylesheet" href="/public/css/bootstrap.css">-->
             <!-- Script og css biblioteker for løsningen-->
             <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
@@ -19,7 +19,7 @@
         <!--Slutt på header-->
         <!--Header som inneholder logo og fargeprofil-->
         <div id="header">
-            <h2>Skoleskyss søkere</h2>
+            <h2 style="text-align: center">Skoleskyss søkere</h2>
         </div>
 
         <body>
@@ -27,19 +27,27 @@
         <div id="velgPeriode" style="left: 5px; display: inline-block; position: relative; top: 0;">
             <form method="get" action="/listapplications">
                 <h4>Velg tidsrom</h4>
-                <div>
-                    <label for="from" style="bottom: 4px; float:left; position:relative;">Fra:</label>
-                    <input type="date" id="from" class="mdl-textfield__input" name="from"
-                           value="{{moment date=d format='YYYY-MM-DD'}}"
-                           style="float: left; top: 130px; width: 180px;"/>
-                    <label for="to" style=" bottom: 4px; float:left;">Til:</label>
-                    <input type="date" id="to" class="mdl-textfield__input" name="to"
-                           value="{{moment date=d format='YYYY-MM-DD'}}" style="position:relative; float: left; width: 180px;"/>
-                    <!--Velg tidsavgrenset periode knapp-->
-                    <input type="submit" value="Hent valgt periode"
-                           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                           style="position:relative; left: 50px;"/>
-                    <!--Slutt på knapp-->
+                <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-shadow--2dp">
+                    <div class="mdl-card__supporting-text mdl-color-text--black">
+
+                        <label for="from" style="bottom: 4px; float:left; position:relative;">Fra:</label>   <br>
+
+                        <input type="date" id="from" class="mdl-textfield__input" name="from"
+                               value="{{moment date=d format='YYYY-MM-DD'}}"
+                               style="position:relative; float: left; width: 180px; bottom: 10px;"/><br><br><br>
+
+                        <label for="to" style="bottom: 4px; float:left; position:relative;">Til:</label> <br>
+
+                        <input type="date" id="to" class="mdl-textfield__input" name="to"
+                               value="{{moment date=d format='YYYY-MM-DD'}}"
+                               style="position:relative; float: left; width: 180px; bottom: 10px;"/>
+                        <!--Velg tidsavgrenset periode knapp-->
+                        <input type="submit" value="Hent valgt periode"
+                               class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                               style="position:relative;"/>
+                        <!--Slutt på knapp-->
+                    </div>
+
                 </div>
             </form>
             <br>
