@@ -9,6 +9,7 @@ module.exports.addStatusToLog = function addStatusToLog (request, reply) {
   var documentId = request.params.documentId
   var status = request.payload
   status.timeStamp = new Date().getTime()
+  request.seneca.act({role: 'info', info: 'skoleskyss', type: 'status', data: status})
   logs.update({'documentId': documentId}, {'$push': {documentStatus: status}}, function (error, data) {
     reply(error || data)
   })

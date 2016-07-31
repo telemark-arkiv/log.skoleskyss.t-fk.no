@@ -2,6 +2,27 @@ logserver:
   image: mongo:3.2.6
   restart: always
 
+services_base:
+  image: telemark/tfk-seneca-base
+  container_name: log_skoleskyss_services_base
+  env_file: log.skoleskyss.env
+  restart: always
+  net: container:log_skoleskyss
+
+services_counter:
+  image: telemark/tfk-seneca-counter
+  container_name: log_skoleskyss_services_counter
+  env_file: log.skoleskyss.env
+  restart: always
+  net: container:log_skoleskyss
+
+services_stats_dispatcher:
+  image: telemark/tfk-seneca-skoleskyss-stats-dispatcher
+  container_name: log_skoleskyss_services_stats_dispatcher
+  env_file: log.skoleskyss.env
+  restart: always
+  net: container:log_skoleskyss
+
 skoleskyss:
   image: telemark/log.skoleskyss.t-fk.no
   container_name: log_skoleskyss

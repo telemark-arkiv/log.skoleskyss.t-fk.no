@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "author": {
@@ -62,6 +62,7 @@
     "tap": "5.7.2"
   },
   "dependencies": {
+    "chairo": "2.2.1",
     "good": "7.0.1",
     "good-console": "6.1.1",
     "good-squeeze": "3.0.1",
@@ -74,6 +75,9 @@
     "jsonwebtoken": "7.0.0",
     "ldapauth-fork": "2.5.2",
     "mongojs": "2.4.0",
+    "seneca": "2.1.0",
+    "seneca-balance-client": "0.5.0",
+    "seneca-mesh": "0.8.0",
     "vision": "4.1.0",
     "yar": "7.0.2",
     "handlebars.moment": "^1.0.4",
