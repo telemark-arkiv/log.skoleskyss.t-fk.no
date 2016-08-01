@@ -3,14 +3,14 @@
     <table id="skolekyssokere" class="mdl-data-table mdl-js-data-table mdl-data-table- mdl-shadow--2dp">
         <thead>
         <tr> <!--Itererer gjennom alle elementene i posisjon [0] som tilsvarer <th>-->
-            {{#each this.[0]}}
+            {{#each payload.[0]}}
             <th id="tablerow" data-sort="string" class="mdl-data-table__cell--non-numeric">{{@key}}</th>
             {{/each}}
         </tr>
         </thead>
         <tbody>
         <!--Itererer gjennom alle verdiene til students og skriver de ut i tabellen-->
-        {{#each this}}
+        {{#each payload}}
         <tr>
             {{#each .}}
             <td class="mdl-data-table__cell--non-numeric"> {{this}}</td>
