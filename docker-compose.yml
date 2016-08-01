@@ -23,7 +23,7 @@ services_stats_dispatcher:
   restart: always
   net: container:log_skoleskyss
 
-skoleskyss:
+log_skoleskyss:
   image: telemark/log.skoleskyss.t-fk.no
   container_name: log_skoleskyss
   env_file: log.skoleskyss.env
