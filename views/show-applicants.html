@@ -19,30 +19,37 @@
         <!--Slutt på header-->
         <!--Header som inneholder logo og fargeprofil-->
         <div id="header">
-            <h2 style="text-align: center">Skoleskyss søkere</h2>
+            <h2>Skoleskyss søknader</h2>
         </div>
 
         <body>
         <!--Panel for valgt periode-->
-        <div id="velgPeriode" style="left: 5px; display: inline-block; position: relative; top: 0;">
+        <div id="velgPeriode" style="left: 5px; display: inline-block; position: relative; top: 0; width: 60%;">
             <form method="get" action="/listapplications">
                 <h4>Velg tidsrom</h4>
-                <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-shadow--2dp" style="width: 430px">
                     <div class="mdl-card__supporting-text mdl-color-text--black">
 
                         <label for="from" style="bottom: 4px; float:left; position:relative;">Fra:</label>   <br>
 
                         <input type="date" id="from" class="mdl-textfield__input" name="from"
                                value="{{moment date=d format='YYYY-MM-DD'}}"
-                               style="position:relative; float: left; width: 180px; bottom: 10px;"/><br><br><br>
-
-                        <label for="to" style="bottom: 4px; float:left; position:relative;">Til:</label> <br>
+                               style="position:relative; float: left; width: 180px; bottom: 10px;"/>
+                        <div>
+                        <label for="to" style=" position:relative; left: 12px; bottom: 16px;">Til:</label> <br>
 
                         <input type="date" id="to" class="mdl-textfield__input" name="to"
                                value="{{moment date=d format='YYYY-MM-DD'}}"
-                               style="position:relative; float: left; width: 180px; bottom: 10px;"/>
+                               style="position: relative; width: 180px; bottom: 28px; left: 32px;"/>
+                        </div>
                         <!--Velg tidsavgrenset periode knapp-->
                         <input type="submit" value="Hent valgt periode"
+                               class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                               style="position:relative;"/>
+                        <!--Slutt på knapp-->
+
+                        <!--Velg 5 dager tilbake knapp-->
+                        <input type="submit" value="Hent fem dager tilbake"
                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                                style="position:relative;"/>
                         <!--Slutt på knapp-->
