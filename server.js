@@ -142,6 +142,12 @@ server.register([
   }
 })
 
+const seneca = server.seneca
+
+seneca.use('mesh', {auto: true})
+
+seneca.log.info('hapi', server.info)
+
 function startServer () {
   server.start(function () {
     console.log('Server running at:', server.info.uri)
