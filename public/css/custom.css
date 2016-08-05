@@ -332,10 +332,6 @@ a:visited {
     -webkit-overflow-scrolling: touch;
 }
 
-.mdl-js-layout {
-    height: 100%;
-}
-
 .exportToExcelClick {
     position: relative;
     top: 10px;
