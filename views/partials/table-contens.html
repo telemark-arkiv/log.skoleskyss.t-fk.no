@@ -2,7 +2,7 @@
     <!--Tabell for som inneholder Skolekyss Søkere-->
     <table id="skolekyssokere" class="mdl-data-table mdl-js-data-table mdl-data-table- mdl-shadow--2dp">
         <thead>
-        <tr> <!--Itererer gjennom alle elementene i posisjon [0] som tilsvarer <th>-->
+        <tr style="cursor: pointer;"> <!--Itererer gjennom alle elementene i posisjon [0] som tilsvarer <th>-->
             {{#each payload.[0]}}
             <th id="tablerow" data-sort="string" class="mdl-data-table__cell--non-numeric">{{@key}}</th>
             {{/each}}
