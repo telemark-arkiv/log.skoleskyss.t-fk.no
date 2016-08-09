@@ -165,3 +165,28 @@ module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, 
     reply.view('show-applicants', viewOptions)
   })
 }
+
+module.exports.showStatistics = function showStatistics (request, reply) {
+  var url = 'https://tfk-livestats.firebaseio.com/skoleskyss.json'
+  var options = {
+    json: true
+  }
+  console.log('URL')
+  Wreck.get(url, options, function (err, data, payload) {
+    if (err) {
+      reply(err)
+    }
+    var viewOptions = {
+      version: pkg.version,
+      versionName: pkg.louie.versionName,
+      versionVideoUrl: pkg.louie.versionVideoUrl,
+      systemName: pkg.louie.systemName,
+      githubUrl: pkg.repository.url,
+      payload: payload
+    }
+    console.log(payload)
+    // request.yar.set({'stats': payload})
+    reply.view('statistikk', viewOptions)
+  })
+}
+
