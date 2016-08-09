@@ -70,6 +70,15 @@ const routes = [
       handler: handlers.exportTableToExcel,
       description: 'Send table to XLSX-converter'
     }
+  },
+  {
+    method: 'GET',
+    path: '/showsomestats',
+    config: {
+      auth: false,
+      handler: Handlers.showStatistics,
+      description: 'Show some stats'
+    }
   }
 ]
 
