@@ -337,3 +337,27 @@ a:visited {
     bottom: 538px;
     left: 0;
 }
+
+#cakediagram {
+    float: left;
+}
+
+#cakediagram2 {
+    float: left;
+}
+
+#cakediagram3 {
+    float: left;
+}
+
+#cakediagram4 {
+    float: left;
+    position: relative;
+    left: 30px;
+}
+
+#cakediagram5{
+    float: left;
+    position: relative;
+    left: 60px;
+}
