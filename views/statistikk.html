@@ -15,9 +15,19 @@
                     var myChart = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
-                            labels: ["Desktop", "Phone", "Tablet", "TV"],
+                            labels: [
+                                "Desktop",
+                                "Phone",
+                                "Tablet",
+                                "TV"
+                            ],
                             datasets: [{
-                                data: ['{{payload.desktop}}', '{{payload.phone}}', '{{payload.tablet}}', '{{payload.tv}}'],
+                                data: [
+                                    '{{payload.desktop}}',
+                                    '{{payload.phone}}',
+                                    '{{payload.tablet}}',
+                                    '{{payload.tv}}'
+                                ],
                                 backgroundColor: [
                                     "#FF6384",
                                     "#36A2EB",
@@ -40,7 +50,7 @@
         <div id="cakediagram2">
             <div class="row placeholders">
                 <div class="col-xs-5 col-sm-5 placeholder">
-                    <h4>Litt 'Antall' statistikk:</h4>
+                    <h4>Avstand/Årsak/Ferge</h4>
                     <canvas id="avstandBosted"></canvas>
                 </div>
                 <script>
@@ -49,9 +59,9 @@
                         type: 'doughnut',
                         data: {
                             labels: [
-                                "antallArsakAnnet",
-                                "antallArsakAvstand",
-                                "antallArsakFerge"
+                                "Årsak-Annet",
+                                "Årsak-Avstand",
+                                "Årsak-Ferge"
                             ],
                             datasets: [{
                                 data: [
@@ -85,7 +95,7 @@
         <div id="cakediagram3">
             <div class="row placeholders">
                 <div class="col-xs-5 col-sm-5 placeholder">
-                    <h4> Bosted:</h4>
+                    <h4> Bosted</h4>
                     <canvas id="Bosted"></canvas>
                 </div>
                 <script>
@@ -93,7 +103,11 @@
                     var myChart = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
-                            labels: ["antallBostedDelt", "antallBostedFolkeregistrert", "antallBostedHybel"],
+                            labels: [
+                                "BostedDelt",
+                                "BostedFolkeregistrert",
+                                "BostedHybel"
+                            ],
                             datasets: [{
                                 data: [
                                     '{{payload.antallBostedDelt}}',
@@ -135,11 +149,11 @@
                         type: 'doughnut',
                         data: {
                             labels: [
-                                "antallAutomatisk",
-                                "antallAvslag",
-                                "antallDuplikater",
-                                "antallInnvilget",
-                                "antallManuell",
+                                "Automatisk",
+                                "Avslag",
+                                "Duplikater",
+                                "Innvilget",
+                                "Manuell",
                             ],
                             datasets: [{
                                 data: [
@@ -184,24 +198,17 @@
                         type: 'doughnut',
                         data: {
                             labels: [
-                                "antallSokere",
-                                "antallSoknader",
-                                "queue",
+                                "Søkere",
+                                "Søknader",
                             ],
                             datasets: [{
                                 data: [
                                     '{{payload.antallSokere}}',
                                     '{{payload.antallSoknader}}',
-                                    '{{payload.queue}}'
                                 ],
                                 backgroundColor: [
                                     "#FF6384",
                                     "#36A2EB",
-                                    "#FF9933",
-                                    "#CCFF33",
-                                    "#FFEE22",
-                                    "#CCCCFF"
-
                                 ],
                                 hoverBackgroundColor: [
                                     "#FFCE56",
