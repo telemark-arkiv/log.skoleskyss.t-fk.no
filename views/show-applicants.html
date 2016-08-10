@@ -64,12 +64,10 @@
                 // Setter verdien feltet har inn i localStorage
                 localStorage.setItem("user_selected_date", value)
                 localStorage.setItem("user_selected_date_to", valueto)
-                console.log(value)
-                console.log(valueto)
             }
-            // Funksjon som henter informasjon fra local storage
+            // Funksjon som henter informasjon fra localStorage
             function getDate() {
-                // Hvis local storage er tomt -> returener dagens dato, hvis det er noe der returner 'user_selected_date'
+                // Hvis localStorage er tomt -> returener dagens dato, hvis det er noe der returner 'user_selected_date'
                 if (localStorage.getItem("user_selected_date") === null) {// Check if there is selected date.
                     return "{{moment date=d format='YYYY-MM-DD'}}"
                 }
