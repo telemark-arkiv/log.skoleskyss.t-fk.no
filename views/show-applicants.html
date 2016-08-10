@@ -37,31 +37,25 @@
                 </div>
             </form>
             <br>
+            </div>
+            <br>
+            <!--Slutt på valgt periode-->
+            {{>table-contens}}
+            <!--Sorteringsfunksjonalitet for tabellen-->
+            <script>
+                $(function () {
+                    $("table").stupidtable();
+                });
+            </script>
+            <p></p>
+            <!--Eksporterer tabellen til Excel-knapp-->
+            <div class="exportToExcelClick">
+                <a href="/excel" id="button"
+                   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Eksporter til Excel
+                </a>
+            </div>
+            <!-- Slutt på Excel-knapp -->
         </div>
         <br>
-        <!--Slutt på valgt periode-->
-        {{>table-contens}}
-        <!--Sorteringsfunksjonalitet for tabellen-->
-        <script>
-            $(function () {
-                $("table").stupidtable();
-            });
-        </script>
-        <p></p>
-        <!--Eksporterer tabellen til Excel-knapp-->
-        <div class="exportToExcelClick">
-            <a href="/excel" id="button"
-               class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                Eksporter til Excel
-            </a>
-        </div>
-        <!-- Slutt på Excel-knapp -->
-        </div>
-        <br>
-        <script>
-            function correctDateFormat(standardDate) {
-                console.log(("Datoformatet er: " + standardDate))
-                console.log((new Date(standardDate).getTime() / 1000))
-            }
-        </script>
    </body>
