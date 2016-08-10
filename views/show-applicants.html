@@ -11,7 +11,7 @@
     <body>
         <!--Panel for valgt periode-->
         <div id="velgPeriode" style="left: 5px; display: inline-block; position: relative; top: 0; width: 60%;">
-            <form method="get" action="/listapplications">
+            <form method="get" action="/listapplications" onSubmit="setDate()">
                 <h4>Velg tidsrom</h4>
                 <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-shadow--2dp" style="width: 430px">
                     <div class="mdl-card__supporting-text mdl-color-text--black">
@@ -55,7 +55,37 @@
                     Eksporter til Excel
                 </a>
             </div>
-            <!-- Slutt på Excel-knapp -->
-        </div>
+            <!-- Slutt på Excel-knapp -->  
+          <script>
+            function setDate() {
+                // Plukker opp inputType date feltet
+                var value = document.getElementById('from').value
+                var valueto = document.getElementById('to').valueto
+                // Setter verdien feltet har inn i localStorage
+                localStorage.setItem("user_selected_date", value)
+                localStorage.setItem("user_selected_date_to", valueto)
+                console.log(value)
+                console.log(valueto)
+            }
+            // Funksjon som henter informasjon fra local storage
+            function getDate() {
+                // Hvis local storage er tomt -> returener dagens dato, hvis det er noe der returner 'user_selected_date'
+                if (localStorage.getItem("user_selected_date") === null) {// Check if there is selected date.
+                    return "{{moment date=d format='YYYY-MM-DD'}}"
+                }
+                // Returnerer den valgte datoen til <input type = date> - feltet
+                return localStorage.getItem("user_selected_date")
+            }
+            function getDateTo() {
+                if (localStorage.getItem("user_selected_date_to") === null) {
+                    return "{{moment date=d format='YYYY-MM-DD'}}"
+                }
+                return localStorage.getItem("user_selected_date_to")
+            }
+            document.getElementById('from').value = getDate()
+            document.getElementById('to').valueto = getDateTo()
+            // Tømmer localStorage
+            localStorage.clear()
+        </script>
         <br>
    </body>
