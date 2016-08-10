@@ -184,8 +184,6 @@ module.exports.showStatistics = function showStatistics (request, reply) {
       githubUrl: pkg.repository.url,
       payload: payload
     }
-    console.log(payload)
-    // request.yar.set({'stats': payload})
     reply.view('statistikk', viewOptions)
   })
 }
