@@ -4,7 +4,7 @@
         <h1>Statistikk</h1>
     </div>
     <div class="mdl-card__supporting-text mdl-color-text--black">
-        <div id="cakediagram">
+        <div id="typeEnheter">
             <div class="row placeholders">
                 <div class="col-xs-50 col-sm-50 placeholder">
                     <h4>Type enheter som er brukt:</h4>
@@ -47,7 +47,7 @@
                 </script>
             </div>
         </div>
-        <div id="cakediagram2">
+        <div id="specials">
             <div class="row placeholders">
                 <div class="col-xs-5 col-sm-5 placeholder">
                     <h4>Avstand/Årsak/Ferge</h4>
@@ -92,7 +92,7 @@
                 </script>
             </div>
         </div>
-        <div id="cakediagram3">
+        <div id="boStatus">
             <div class="row placeholders">
                 <div class="col-xs-5 col-sm-5 placeholder">
                     <h4> Bosted</h4>
@@ -137,98 +137,100 @@
                 </script>
             </div>
         </div>
-        <div id="cakediagram4">
-            <div class="row placeholders">
-                <div class="col-xs-5 col-sm-5 placeholder">
-                    <h4> Innvliget/Avslag/Manuell/Duplikat</h4>
-                    <canvas id="soknad"></canvas>
-                </div>
-                <script>
-                    var ctx = document.getElementById("soknad");
-                    var myChart = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: [
-                                "Automatisk",
-                                "Avslag",
-                                "Duplikater",
-                                "Innvilget",
-                                "Manuell",
-                            ],
-                            datasets: [{
-                                data: [
-                                    '{{payload.antallAutomatisk}}',
-                                    '{{payload.antallAvslag}}',
-                                    '{{payload.antallDuplikater}}',
-                                    '{{payload.antallInnvilget}}',
-                                    '{{payload.antallManuell}}',
+        <div id="cakeDiagramFourAndFive">
+            <div id="statusSokere">
+                <div class="row placeholders">
+                    <div class="col-xs-5 col-sm-5 placeholder">
+                        <h4> Innvliget/Avslag/Manuell/Duplikat</h4>
+                        <canvas id="soknad"></canvas>
+                    </div>
+                    <script>
+                        var ctx = document.getElementById("soknad");
+                        var myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: [
+                                    "Automatisk",
+                                    "Avslag",
+                                    "Duplikater",
+                                    "Innvilget",
+                                    "Manuell",
                                 ],
-                                backgroundColor: [
-                                    "#FF6384",
-                                    "#36A2EB",
-                                    "#FF9933",
-                                    "#CCFF33",
-                                    "#FFEE22",
-                                    "#CCCCFF"
+                                datasets: [{
+                                    data: [
+                                        '{{payload.antallAutomatisk}}',
+                                        '{{payload.antallAvslag}}',
+                                        '{{payload.antallDuplikater}}',
+                                        '{{payload.antallInnvilget}}',
+                                        '{{payload.antallManuell}}',
+                                    ],
+                                    backgroundColor: [
+                                        "#FF6384",
+                                        "#36A2EB",
+                                        "#FF9933",
+                                        "#CCFF33",
+                                        "#FFEE22",
+                                        "#CCCCFF"
 
-                                ],
-                                hoverBackgroundColor: [
-                                    "#FFCE56",
-                                    "#FFCE56",
-                                    "#FFCE56",
-                                    "#FFCE56",
-                                    "#CCCCFF",
-                                    "#FFEE22",
-                                ]
-                            }]
-                        }
-                    });
-                </script>
-            </div>
-        </div>
-        <div id="cakediagram5">
-            <div class="row placeholders">
-                <div class="col-xs-5 col-sm-5 placeholder">
-                    <h4> Innvliget/Avslag/Manuell/Duplikat</h4>
-                    <canvas id="antallSokere"></canvas>
+                                    ],
+                                    hoverBackgroundColor: [
+                                        "#FFCE56",
+                                        "#FFCE56",
+                                        "#FFCE56",
+                                        "#FFCE56",
+                                        "#CCCCFF",
+                                        "#FFEE22",
+                                    ]
+                                }]
+                            }
+                        });
+                    </script>
                 </div>
-                <script>
-                    var ctx = document.getElementById("antallSokere");
-                    var myChart = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: [
-                                "Søkere",
-                                "Søknader",
-                            ],
-                            datasets: [{
-                                data: [
-                                    '{{payload.antallSokere}}',
-                                    '{{payload.antallSoknader}}',
+            </div>
+            <div id="sokere">
+                <div class="row placeholders">
+                    <div class="col-xs-5 col-sm-5 placeholder">
+                        <h4> Innvliget/Avslag/Manuell/Duplikat</h4>
+                        <canvas id="antallSokere"></canvas>
+                    </div>
+                    <script>
+                        var ctx = document.getElementById("antallSokere");
+                        var myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: [
+                                    "Søkere",
+                                    "Søknader",
                                 ],
-                                backgroundColor: [
-                                    "#FF6384",
-                                    "#36A2EB",
-                                ],
-                                hoverBackgroundColor: [
-                                    "#FFCE56",
-                                    "#FFCE56",
-                                    "#FFCE56",
-                                    "#FFCE56",
-                                    "#CCCCFF",
-                                    "#FFEE22",
-                                ]
-                            }]
-                        }
-                    });
-                </script>
+                                datasets: [{
+                                    data: [
+                                        '{{payload.antallSokere}}',
+                                        '{{payload.antallSoknader}}',
+                                    ],
+                                    backgroundColor: [
+                                        "#FF6384",
+                                        "#36A2EB",
+                                    ],
+                                    hoverBackgroundColor: [
+                                        "#FFCE56",
+                                        "#FFCE56",
+                                        "#FFCE56",
+                                        "#FFCE56",
+                                        "#CCCCFF",
+                                        "#FFEE22",
+                                    ]
+                                }]
+                            }
+                        });
+                    </script>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <div>
-    <!--Tabell for som inneholder Skolekyss Søkere-->
+    <!--Tabell for statistikk fra skoleskyss søkere-->
     <table id="skolekyssokere" class="mdl-data-table mdl-js-data-table mdl-data-table- mdl-shadow--2dp">
         <thead>
         <tr style="cursor: pointer;"> <!--Itererer gjennom alle elementene i posisjon [0] som tilsvarer <th>-->
@@ -238,7 +240,7 @@
         </tr>
         </thead>
         <tbody>
-        <!--Itererer gjennom alle verdiene til students og skriver de ut i tabellen-->
+        <!--Itererer gjennom alle verdiene til statistikken og skriver de ut i tabellen-->
         <tr>
             {{#each payload}}
             <td class="mdl-data-table__cell--non-numeric"> {{this}}</td>
@@ -248,3 +250,11 @@
     </table>
 </div>
 <!--Slutt på tabell-->
+<h3>Rådata fra json-fil</h3>
+<br>
+<ul id="rawData">
+    {{#each payload}}
+    <li id="li" data-sort="string" class="mdl-data-table__cell--non-numeric">{{@key}}: {{this}}</li>
+    {{/each}}
+</ul>
+
