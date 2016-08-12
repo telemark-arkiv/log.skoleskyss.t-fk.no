@@ -143,10 +143,10 @@ module.exports.exportTableToExcel = function exportTableToExcel (request, reply)
 }
 
 module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, reply) {
-  var from = request.query.from || Moment().subtract(5, 'day')
-  var to = request.query.to || Moment.now()
-  var fromDate = Moment(from).unix()
-  var toDate = Moment(to).unix()
+  var from = Moment().subtract(5, 'day')
+  var to =  Moment.now()
+  var fromDate = Moment(from).valueOf()
+  var toDate = Moment(to).valueOf()
 
   var url = config.LOG_SKOLESKYSS_GET_APPLICATIONS + fromDate + '/' + toDate
   Wreck.get(url, wreckOptions, function (err, data, payload) {
