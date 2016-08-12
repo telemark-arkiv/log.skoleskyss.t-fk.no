@@ -167,7 +167,7 @@ module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, 
 }
 
 module.exports.showStatistics = function showStatistics (request, reply) {
-  var url = 'https://tfk-livestats.firebaseio.com/skoleskyss.json'
+  var url = config.LOG_SKOLESKYSS_GET_STATISTICS
   var options = {
     json: true
   }
