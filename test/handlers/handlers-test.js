@@ -14,3 +14,9 @@ tap.ok(handlers.showLogin, 'Handler has method showLogin')
 tap.ok(handlers.doLogin, 'Handler has method doLogin')
 
 tap.ok(handlers.doLogout, 'Handler has method doLogout')
+
+tap.ok(handlers.getselectedtimeperiod, 'Handler has method getselectedtimeperiod')
+
+tap.ok(handlers.showStatistics, 'Handler has method showStatistics')
+
+tap.ok(handlers.getselectedtimeperiod, 'Handler has method getselectedtimeperiod')
