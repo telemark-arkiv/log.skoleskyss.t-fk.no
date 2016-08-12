@@ -144,7 +144,7 @@ module.exports.exportTableToExcel = function exportTableToExcel (request, reply)
 
 module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, reply) {
   var from = Moment().subtract(5, 'day')
-  var to =  Moment.now()
+  var to = Moment.now()
   var fromDate = Moment(from).valueOf()
   var toDate = Moment(to).valueOf()
 
