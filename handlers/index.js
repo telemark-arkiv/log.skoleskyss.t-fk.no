@@ -171,7 +171,6 @@ module.exports.showStatistics = function showStatistics (request, reply) {
   var options = {
     json: true
   }
-  console.log('URL')
   Wreck.get(url, options, function (err, data, payload) {
     if (err) {
       reply(err)
