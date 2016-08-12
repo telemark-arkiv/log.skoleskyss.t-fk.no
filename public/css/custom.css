@@ -332,10 +332,10 @@ a:visited {
 }
 
 .exportToExcelClick {
-    position: relative;
-    top: 10px;
-    bottom: 538px;
-    left: 0;
+   position: absolute;
+    top: 92px;
+    /* bottom: 426px; */
+    left: 200px;
 }
 
 #typeEnheter{
