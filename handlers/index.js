@@ -121,6 +121,32 @@ module.exports.doLogin = function doLogin (request, reply) {
   })
 }
 
+/*
+// For local testing
+module.exports.doLogin = (request, reply) => {
+  var jwt = require('jsonwebtoken')
+  var payload = request.payload
+  var username = payload.username
+  // var password = payload.password
+  var user = {
+    cn: username,
+    userId: username
+  }
+  var tokenOptions = {
+    expiresIn: '1h',
+    issuer: 'https://auth.t-fk.no'
+  }
+  var token = jwt.sign(user, config.LOG_SKOLESKYSS_JWT_SECRET, tokenOptions)
+  request.cookieAuth.set({
+    token: token,
+    isAuthenticated: true,
+    data: user
+  })
+
+  reply.redirect('/')
+}
+*/
+
 module.exports.doLogout = function doLogout (request, reply) {
   request.cookieAuth.clear()
   reply.redirect('/')
@@ -149,6 +175,7 @@ module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, 
   var toDate = Moment(to).valueOf()
 
   var url = config.LOG_SKOLESKYSS_GET_APPLICATIONS + fromDate + '/' + toDate
+
   Wreck.get(url, wreckOptions, function (err, data, payload) {
     if (err) {
       reply(err)
