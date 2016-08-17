@@ -74,6 +74,7 @@ module.exports.showLogin = function showLogin (request, reply) {
   reply.view('login', viewOptions, {layout: 'layout-login'})
 }
 
+/*
 module.exports.doLogin = function doLogin (request, reply) {
   var jwt = require('jsonwebtoken')
   var payload = request.payload
@@ -120,8 +121,8 @@ module.exports.doLogin = function doLogin (request, reply) {
     }
   })
 }
+*/
 
-/*
 // For local testing
 module.exports.doLogin = (request, reply) => {
   var jwt = require('jsonwebtoken')
@@ -145,7 +146,6 @@ module.exports.doLogin = (request, reply) => {
 
   reply.redirect('/')
 }
-*/
 
 module.exports.doLogout = function doLogout (request, reply) {
   request.cookieAuth.clear()
@@ -169,10 +169,20 @@ module.exports.exportTableToExcel = function exportTableToExcel (request, reply)
 }
 
 module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, reply) {
-  var from = Moment().subtract(5, 'day')
+  const inputFrom = request.query.from
+  const inputTo = request.query.to
+  var from = Moment().subtract(2, 'day')
   var to = Moment.now()
   var fromDate = Moment(from).valueOf()
   var toDate = Moment(to).valueOf()
+
+  if (inputFrom !== undefined) {
+    fromDate = new Date(inputFrom.toString()).getTime()
+  }
+
+  if (inputTo !== undefined) {
+    toDate = new Date(inputTo.toString()).getTime()
+  }
 
   var url = config.LOG_SKOLESKYSS_GET_APPLICATIONS + fromDate + '/' + toDate
 
@@ -186,6 +196,8 @@ module.exports.getselectedtimeperiod = function getselectedtimeperiod (request, 
       versionVideoUrl: pkg.louie.versionVideoUrl,
       systemName: pkg.louie.systemName,
       githubUrl: pkg.repository.url,
+      fromDate: fromDate,
+      toDate: toDate,
       payload: payload
     }
     request.yar.set({'sokerdata': payload})
