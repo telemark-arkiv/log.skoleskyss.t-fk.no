@@ -50,7 +50,6 @@ const routes = [
     method: 'GET',
     path: '/listapplications',
     config: {
-      auth: false,
       validate: {
         query:
         {
