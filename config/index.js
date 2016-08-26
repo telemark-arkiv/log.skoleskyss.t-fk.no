@@ -1,5 +1,5 @@
 'use strict'
-process.env.LOG_SKOLESKYSS_SERVER_PORT_WEB = 3000
+
 // For OpenLDAP:
 // searchFilter: process.env.LOG_SKOLESKYSS_LDAP_SEARCH_FILTER || '(uid={{username}})'
 // For Active Directory:

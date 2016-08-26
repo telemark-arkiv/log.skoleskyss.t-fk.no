@@ -63,15 +63,6 @@ const routes = [
   },
   {
     method: 'GET',
-    path: '/excel',
-    config: {
-      auth: false,
-      handler: handlers.exportTableToExcel,
-      description: 'Send table to XLSX-converter'
-    }
-  },
-  {
-    method: 'GET',
     path: '/showsomestats',
     config: {
       auth: false,

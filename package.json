@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "author": {
@@ -67,22 +67,25 @@
     "good-console": "6.1.1",
     "good-squeeze": "3.0.1",
     "handlebars": "4.0.5",
+    "handlebars.moment": "1.0.4",
     "hapi": "13.4.1",
     "hapi-auth-cookie": "6.1.1",
     "hapi-auth-jwt2": "7.0.0",
     "hoek": "4.0.0",
     "inert": "4.0.0",
+    "joi": "8.4.1",
     "jsonwebtoken": "7.0.0",
     "ldapauth-fork": "2.5.2",
+    "moment": "2.13.0",
     "mongojs": "2.4.0",
     "seneca": "2.1.0",
     "seneca-balance-client": "0.5.0",
     "seneca-mesh": "0.8.0",
+    "tfk-generate-jwt": "1.0.1",
+    "uuid": "2.0.2",
     "vision": "4.1.0",
-    "yar": "7.0.2",
-    "handlebars.moment": "1.0.4",
-    "joi": "8.4.1",
-    "moment": "2.13.0",
-    "wreck": "7.2.0"
+    "wreck": "9.0.0",
+    "xlsx-writestream": "0.4.0",
+    "yar": "7.0.2"
   }
 }

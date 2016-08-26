@@ -74,7 +74,6 @@ module.exports.showLogin = function showLogin (request, reply) {
   reply.view('login', viewOptions, {layout: 'layout-login'})
 }
 
-/*
 module.exports.doLogin = function doLogin (request, reply) {
   var jwt = require('jsonwebtoken')
   var payload = request.payload
@@ -121,8 +120,8 @@ module.exports.doLogin = function doLogin (request, reply) {
     }
   })
 }
-*/
 
+/*
 // For local testing
 module.exports.doLogin = (request, reply) => {
   var jwt = require('jsonwebtoken')
@@ -146,6 +145,7 @@ module.exports.doLogin = (request, reply) => {
 
   reply.redirect('/')
 }
+*/
 
 module.exports.doLogout = function doLogout (request, reply) {
   request.cookieAuth.clear()
