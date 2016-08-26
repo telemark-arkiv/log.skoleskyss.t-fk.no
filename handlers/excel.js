@@ -41,12 +41,15 @@ module.exports.createExcelFile = (request, reply) => {
     if (err) {
       reply(err)
     } else {
-      const filename = `${process.cwd()}/uploads/${uuid.v4()}.xlsx`
+      const uniqueName = `${uuid.v4()}.xlsx`
+      const filename = `${process.cwd()}/uploads/${uniqueName}`
       xlsx.write(filename, payload, function (err) {
         if (err) {
           reply(err)
         } else {
           reply.file(filename)
+            .header('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            .header('Content-Disposition', 'attachment; filename=' + uniqueName)
             .on('finish', () => {
               fs.unlink(filename)
             })
