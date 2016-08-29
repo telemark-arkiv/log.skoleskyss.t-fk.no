@@ -31,6 +31,40 @@ const yarOptions = {
   }
 }
 
+server.connection({
+  port: config.LOG_SKOLESKYSS_SERVER_PORT_WEB
+})
+
+server.register(require('hapi-auth-cookie'), function (err) {
+  if (err) {
+    console.error('Failed to load a plugin: ', err)
+  }
+
+  server.auth.strategy('session', 'cookie', {
+    password: config.LOG_SKOLESKYSS_COOKIE_SECRET,
+    cookie: 'skoleskyss-session',
+    validateFunc: validate,
+    redirectTo: '/login',
+    isSecure: false
+  })
+
+  server.auth.default('session')
+})
+
+server.register(require('hapi-auth-jwt2'), function (err) {
+  if (err) {
+    console.log(err)
+  }
+
+  server.auth.strategy('jwt', 'jwt',
+    { key: config.LOG_SKOLESKYSS_JWT_SECRET,          // Never Share your secret key
+      validateFunc: validateAPI,            // validate function defined above
+      verifyOptions: { algorithms: [ 'HS256' ] } // pick a strong algorithm
+    })
+
+  registerRoutes()
+})
+
 const plugins = [
   {register: Chairo, options: {seneca: Seneca}}
 ]
@@ -44,10 +78,6 @@ function endIfError (error) {
 
 server.register(plugins, function (error) {
   endIfError(error)
-})
-
-server.connection({
-  port: config.LOG_SKOLESKYSS_SERVER_PORT_WEB
 })
 
 server.register(require('vision'), function (err) {
@@ -85,34 +115,6 @@ server.register(require('inert'), function (err) {
   })
 })
 
-server.register(require('hapi-auth-cookie'), function (err) {
-  if (err) {
-    console.error('Failed to load a plugin: ', err)
-  }
-
-  server.auth.strategy('session', 'cookie', {
-    password: config.LOG_SKOLESKYSS_COOKIE_SECRET,
-    cookie: 'skoleskyss-session',
-    validateFunc: validate,
-    redirectTo: '/login',
-    isSecure: false
-  })
-
-  server.auth.default('session')
-})
-
-server.register(require('hapi-auth-jwt2'), function (err) {
-  if (err) {
-    console.log(err)
-  }
-
-  server.auth.strategy('jwt', 'jwt',
-    { key: config.LOG_SKOLESKYSS_JWT_SECRET,          // Never Share your secret key
-      validateFunc: validateAPI,            // validate function defined above
-      verifyOptions: { algorithms: [ 'HS256' ] } // pick a strong algorithm
-    })
-})
-
 server.register({
   register: require('yar'),
   options: yarOptions
@@ -131,22 +133,24 @@ server.register({
   }
 })
 
-server.register([
-  {
-    register: logService,
-    options: {}
-  }
-], function (err) {
-  if (err) {
-    console.error('Failed to load a plugin:', err)
-  }
-})
-
 const seneca = server.seneca
 
 seneca.use('mesh', {auto: true})
 
 seneca.log.info('hapi', server.info)
+
+function registerRoutes () {
+  server.register([
+    {
+      register: logService,
+      options: {}
+    }
+  ], function (err) {
+    if (err) {
+      console.error('Failed to load a plugin:', err)
+    }
+  })
+}
 
 function startServer () {
   server.start(function () {
