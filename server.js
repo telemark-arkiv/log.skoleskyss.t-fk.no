@@ -4,6 +4,8 @@ const Chairo = require('chairo')
 const Seneca = require('seneca')()
 const Hapi = require('hapi')
 const Hoek = require('hoek')
+const hapiAuthCookie = require('hapi-auth-cookie')
+const hapiAuthJwt = require('hapi-auth-jwt2')
 const server = new Hapi.Server()
 const config = require('./config')
 const logService = require('./index')
@@ -35,35 +37,16 @@ server.connection({
   port: config.LOG_SKOLESKYSS_SERVER_PORT_WEB
 })
 
-server.register(require('hapi-auth-cookie'), function (err) {
-  if (err) {
-    console.error('Failed to load a plugin: ', err)
+const authPlugins = [
+  {
+    register: hapiAuthCookie,
+    options: {}
+  },
+  {
+    register: hapiAuthJwt,
+    options: {}
   }
-
-  server.auth.strategy('session', 'cookie', {
-    password: config.LOG_SKOLESKYSS_COOKIE_SECRET,
-    cookie: 'skoleskyss-session',
-    validateFunc: validate,
-    redirectTo: '/login',
-    isSecure: false
-  })
-
-  server.auth.default('session')
-})
-
-server.register(require('hapi-auth-jwt2'), function (err) {
-  if (err) {
-    console.log(err)
-  }
-
-  server.auth.strategy('jwt', 'jwt',
-    { key: config.LOG_SKOLESKYSS_JWT_SECRET,          // Never Share your secret key
-      validateFunc: validateAPI,            // validate function defined above
-      verifyOptions: { algorithms: [ 'HS256' ] } // pick a strong algorithm
-    })
-
-  registerRoutes()
-})
+]
 
 const plugins = [
   {register: Chairo, options: {seneca: Seneca}}
@@ -78,6 +61,28 @@ function endIfError (error) {
 
 server.register(plugins, function (error) {
   endIfError(error)
+})
+
+server.register(authPlugins, function (error) {
+  endIfError(error)
+
+  server.auth.strategy('session', 'cookie', {
+    password: config.LOG_SKOLESKYSS_COOKIE_SECRET,
+    cookie: 'skoleskyss-session',
+    validateFunc: validate,
+    redirectTo: '/login',
+    isSecure: false
+  })
+
+  server.auth.default('session')
+
+  server.auth.strategy('jwt', 'jwt', {
+    key: config.LOG_SKOLESKYSS_JWT_SECRET,          // Never Share your secret key
+    validateFunc: validateAPI,            // validate function defined above
+    verifyOptions: { algorithms: [ 'HS256' ] } // pick a strong algorithm
+  })
+
+  registerRoutes()
 })
 
 server.register(require('vision'), function (err) {
