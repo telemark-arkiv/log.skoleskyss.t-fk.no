@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "author": {
@@ -22,7 +22,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=4.5.0"
+    "node": ">=4.6.0"
   },
   "scripts": {
     "start": "node standalone.js",
