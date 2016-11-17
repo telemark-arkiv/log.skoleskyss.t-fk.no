@@ -84,7 +84,7 @@
     "seneca-balance-client": "0.6.0",
     "seneca-mesh": "0.9.0",
     "tfk-generate-jwt": "1.0.6",
-    "tfk-json-to-xlsx": "1.0.2",
+    "tfk-json-to-xlsx": "1.0.4",
     "uuid": "2.0.2",
     "vision": "4.1.0",
     "wreck": "10.0.0",
