@@ -72,7 +72,7 @@
     "handlebars.moment": "1.0.4",
     "hapi": "15.2.0",
     "hapi-auth-cookie": "6.1.1",
-    "hapi-auth-jwt2": "7.2.0",
+    "hapi-auth-jwt2": "7.2.2",
     "hoek": "4.1.0",
     "inert": "4.0.2",
     "joi": "10.0.1",
