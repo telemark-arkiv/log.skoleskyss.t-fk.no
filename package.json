@@ -76,7 +76,7 @@
     "hoek": "4.1.0",
     "inert": "4.0.2",
     "joi": "10.0.2",
-    "jsonwebtoken": "7.1.9",
+    "jsonwebtoken": "7.1.10",
     "ldapauth-fork": "2.5.4",
     "moment": "2.17.0",
     "mongojs": "2.4.0",
