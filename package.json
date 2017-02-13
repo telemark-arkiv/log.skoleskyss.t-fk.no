@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "2.1.40",
+  "version": "2.1.41",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "author": {
@@ -84,7 +84,7 @@
     "seneca-balance-client": "0.6.0",
     "seneca-mesh": "0.9.0",
     "tfk-generate-jwt": "1.0.12",
-    "tfk-json-to-xlsx": "1.0.7",
+    "tfk-json-to-xlsx": "1.0.9",
     "uuid": "3.0.1",
     "vision": "4.1.1",
     "wreck": "10.0.0",
