@@ -58,8 +58,8 @@
     "url": "http://github.com/telemark/log.skoleskyss.t-fk.no/issues"
   },
   "devDependencies": {
-    "coveralls": "2.11.16",
-    "nsp": "2.6.2",
+    "coveralls": "2.12.0",
+    "nsp": "2.6.3",
     "standard": "9.0.2",
     "tap": "10.3.0"
   },
@@ -77,12 +77,12 @@
     "inert": "4.1.0",
     "joi": "10.2.2",
     "jsonwebtoken": "7.3.0",
-    "ldapauth-fork": "3.0.0",
+    "ldapauth-fork": "3.0.1",
     "moment": "2.17.1",
     "mongojs": "2.4.0",
     "seneca": "3.2.2",
     "seneca-balance-client": "0.6.0",
-    "seneca-mesh": "0.9.0",
+    "seneca-mesh": "0.10.0",
     "tfk-generate-jwt": "1.0.16",
     "tfk-json-to-xlsx": "1.0.11",
     "uuid": "3.0.1",
