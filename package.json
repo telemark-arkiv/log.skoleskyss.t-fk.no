@@ -1,8 +1,9 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "2.1.50",
+  "version": "2.2.0",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
+  "private": true,
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
