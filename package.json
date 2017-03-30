@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "2.1.49",
+  "version": "2.1.50",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "author": {
@@ -58,10 +58,10 @@
     "url": "http://github.com/telemark/log.skoleskyss.t-fk.no/issues"
   },
   "devDependencies": {
-    "coveralls": "2.11.16",
+    "coveralls": "2.12.0",
     "nsp": "2.6.3",
     "standard": "8.6.0",
-    "tap": "10.2.0"
+    "tap": "10.3.0"
   },
   "dependencies": {
     "chairo": "3.0.0",
