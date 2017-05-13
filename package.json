@@ -1,6 +1,6 @@
 {
   "name": "log.skoleskyss.t-fk.no",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Logserver for skoleskyss",
   "license": "MIT",
   "private": true,
@@ -61,7 +61,7 @@
   "devDependencies": {
     "coveralls": "2.13.1",
     "nsp": "2.6.3",
-    "standard": "10.0.2",
+    "standard": "10.0.0",
     "tap": "10.3.2"
   },
   "dependencies": {
